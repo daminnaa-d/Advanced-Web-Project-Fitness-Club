@@ -1,0 +1,29 @@
+form {
+  margin: 25px auto;
+  background-color: #ffe6e6;
+  width: 300px;
+  padding:  10px 50px;
+  text-align: center;
+}
+input{
+  width: 95%;
+  height: 30px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 3px;
+  padding-left: 10px;
+}
+
+.btn{
+  background-color: #ff9999;
+  color: white;
+  border:none;
+}
+
+.btn:hover{
+  background-color:  #ff6666;
+}
+h1{
+  color: #ff6666;
+}
+

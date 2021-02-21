@@ -1,0 +1,38 @@
+th{
+  margin: 10px 10px;
+  padding: 10px 10px;
+}
+
+td{
+  margin: 10px 10px;
+  padding: 10px 10px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li img {
+  text-align: center;
+  padding: 5px 5px;
+  text-decoration: none;
+}
+li {
+  display: inline-block;
+
+}
+form{
+  margin: 0 auto;
+  padding: 20px 30px;
+  background-color: #ff9999;
+}
+.contacts{
+  display: inline-block;
+  text-align: center;
+}
+.schedule{
+  display: inline-block;
+  float:right;
+  text-align: center;
+}

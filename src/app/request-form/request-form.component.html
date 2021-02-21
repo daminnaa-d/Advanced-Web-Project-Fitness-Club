@@ -1,0 +1,10 @@
+
+<form class="request">
+  <h1>Send a request!</h1>
+ <div><input type="text" name="fullname" [(ngModel)]="fullname"  placeholder="Full name"></div>
+  <div><input type="text" name="phonenumber" [(ngModel)]="phonenumber" placeholder="Phone number"></div>
+  <div><input type="text" name="question" [(ngModel)]="question" placeholder="Your question"></div>
+  <input class="btn" type="submit" value="Send">
+</form>
+
+<app-request-output [fullname]="fullname" [phonenumber]="phonenumber" [question]="question"></app-request-output>
