@@ -13,6 +13,11 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { RequestFormComponent } from './request-form/request-form.component';
 import { RequestOutputComponent } from './request-form/request-output/request-output.component';
 import {FormsModule} from '@angular/forms';
+import { GymComponent } from './gym/gym.component';
+import { GroupProgramsComponent } from './group-programs/group-programs.component';
+import { ChildrensClubComponent } from './childrens-club/childrens-club.component';
+import { MartialArtsComponent } from './martial-arts/martial-arts.component';
+import { ExtraServicesComponent } from './extra-services/extra-services.component';
 
 const appRoutes: Routes = [
   {path: '', component: FitnessClubComponent},
@@ -20,7 +25,11 @@ const appRoutes: Routes = [
   {path: 'services', component: ServicesComponent},
   {path: 'trainers', component: TrainersComponent},
   {path: 'contacts', component: ContactsComponent},
-  {path: 'request', component: RequestFormComponent},
+  {path: 'gym', component: GymComponent},
+  {path: 'group', component: GroupProgramsComponent},
+  {path: 'children', component: ChildrensClubComponent},
+  {path: 'martial', component: MartialArtsComponent},
+  {path: 'extra', component: ExtraServicesComponent},
 ];
 
 @NgModule({
@@ -34,7 +43,12 @@ const appRoutes: Routes = [
     TrainersComponent,
     ContactsComponent,
     RequestFormComponent,
-    RequestOutputComponent
+    RequestOutputComponent,
+    GymComponent,
+    GroupProgramsComponent,
+    ChildrensClubComponent,
+    MartialArtsComponent,
+    ExtraServicesComponent
   ],
     imports: [
         BrowserModule,

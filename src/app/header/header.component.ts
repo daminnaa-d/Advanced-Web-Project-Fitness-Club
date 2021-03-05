@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  value = false;
   constructor() { }
-
+  // tslint:disable-next-line:typedef
+  toggle(){
+    this.value = !this.value;
+    return this.value;
+  }
   ngOnInit(): void {
   }
 

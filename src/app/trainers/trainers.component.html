@@ -1,1 +1,9 @@
-<p>trainers works!</p>
+<div class="container">
+<div *ngFor="let trainer of trainers " class="trainer">
+  <img src="{{trainer.url}}" alt="trainer" class="img">
+  <h2>{{trainer.name | uppercase}}</h2>
+  <p>{{trainer.info | lowercase}}</p>
+</div>
+</div>
+
+

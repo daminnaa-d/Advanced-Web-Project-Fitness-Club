@@ -22,10 +22,10 @@ li {
   display: inline-block;
 
 }
-form{
+.container{
+  width: 700px;
   margin: 0 auto;
   padding: 20px 30px;
-  background-color: #ff9999;
 }
 .contacts{
   display: inline-block;
@@ -35,4 +35,7 @@ form{
   display: inline-block;
   float:right;
   text-align: center;
+}
+footer{
+  background-color: #ff9999;
 }

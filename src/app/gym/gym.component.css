@@ -1,7 +1,7 @@
 .image{
   text-align: center;
   padding: 170px 100px;
-  background: url("/assets/images/fitness-club.jpg") ;
+  background: url("/assets/images/background.jpg") ;
   background-size: 100%;
 }
 
@@ -13,6 +13,36 @@
   font-size: 20px;
   width: 500px;
 }
+
+h1{
+  font-size: 50px;
+}
+
+.container{
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.block1{
+  display: inline-block;
+  width: 500px;
+padding: 20px;
+}
+
+.block2{
+  display: inline-block;
+  width: 500px;
+  padding: 20px;
+}
+
+.img1{
+  width: 500px;
+
+}
+.img2{
+  width: 500px;
+}
+
 ol{
   counter-reset: li;
   list-style: none;
@@ -67,17 +97,3 @@ ol{
   display: inline-block;
 }
 
-.container{
-  width: 1080px;
-  margin: 0 auto;
-}
-
-.img{
-  display: inline-block;
-  width:550px;
-}
-
-img{
-  width: 100%;
-  height: 100%;
-}

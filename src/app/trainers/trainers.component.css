@@ -1,0 +1,15 @@
+.img{
+  width: 200px;
+  margin: 0 auto;
+}
+.container{
+  width: 1080px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.trainer{
+  display: inline-block;
+  width: 210px;
+  margin: 30px;
+
+}

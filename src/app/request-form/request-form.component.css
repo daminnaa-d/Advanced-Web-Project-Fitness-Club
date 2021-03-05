@@ -1,3 +1,10 @@
+.container{
+  position: absolute;
+  text-align: center;
+  left: auto;
+  width: 1500px;
+  display: block;
+}
 form {
   margin: 25px auto;
   background-color: #ffe6e6;

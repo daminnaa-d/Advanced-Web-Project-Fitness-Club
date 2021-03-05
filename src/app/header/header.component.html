@@ -5,33 +5,27 @@
     <li><a routerLink="/schedule">Schedule</a></li>
     <li>
       <div class="dropdown">
-      <button routerLink="/services" class="dropbtn">Services
+      <button  class="dropbtn">Services
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="#">Gym</a>
-        <a href="#">Group programs</a>
-        <a href="#">Children's club</a>
-        <a href="#">Martial arts</a>
-        <a href="#">Extra services</a>
+        <a routerLink="/gym">Gym</a>
+        <a routerLink="/group">Group programs</a>
+        <a routerLink="/children">Children's club</a>
+        <a routerLink="/martial">Martial arts</a>
+        <a routerLink="/extra">Extra services</a>
       </div>
     </div>
     </li>
     <li><a routerLink="/trainers">Trainers</a></li>
     <li><a routerLink="/contacts">Contacts</a></li>
-    <li><a routerLink="/request">Leave request</a></li>
+  <li><a (click)="toggle()" >Leave request</a></li>
   </ul>
 </nav>
+
+  <app-request-form *ngIf="toggle()" ></app-request-form>
+<div [ngClass]="{vision: !toggle()}" >
 <router-outlet></router-outlet>
-<!--<div>-->
-<!--  <h1>Angular routes</h1>-->
-<!--  <nav>-->
-<!--    -->
-<!--    -->
-
-<!--    <a routerLink="/request">Request Form</a>-->
-<!--  </nav>-->
-
-<!--</div>-->
+</div>
 
 
