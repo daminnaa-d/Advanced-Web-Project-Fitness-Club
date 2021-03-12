@@ -18,6 +18,9 @@ import { GroupProgramsComponent } from './group-programs/group-programs.componen
 import { ChildrensClubComponent } from './childrens-club/childrens-club.component';
 import { MartialArtsComponent } from './martial-arts/martial-arts.component';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
+import {LoggingService} from './appServices/logging.service';
+import {TrainerService} from './appServices/trainer.service';
+
 
 const appRoutes: Routes = [
   {path: '', component: FitnessClubComponent},
@@ -56,7 +59,7 @@ const appRoutes: Routes = [
         FormsModule,
         RouterModule.forRoot(appRoutes)
     ],
-  providers: [],
+  providers: [LoggingService, TrainerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
