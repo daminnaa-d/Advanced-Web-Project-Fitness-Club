@@ -19,7 +19,7 @@ export class TrainerService {
       new Trainer('/assets/images/Steven.jpg', 'Steven', 'Certified gym instructor. Master of Sports in powerlifting. Candidate for Master of Sports in bench press!'),
       ];
 
-    this.loggingService.log('List of shared values: ' + trainerList);
+    this.loggingService.log('List of trainers: ' + trainerList);
 
     return trainerList;
   }

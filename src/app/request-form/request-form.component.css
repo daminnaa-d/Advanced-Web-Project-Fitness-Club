@@ -34,3 +34,15 @@ h1{
   color: #ff6666;
 }
 
+.output{
+  background-color: white;
+  margin: 25px auto;
+  width: 300px;
+  padding:  10px 50px;
+  z-index: 99;
+}
+
+ul{
+  list-style-type: none;
+}
+

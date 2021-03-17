@@ -4,8 +4,19 @@
  <div><input type="text" name="fullname" [(ngModel)]="fullname"  placeholder="Full name"></div>
   <div><input type="text" name="phonenumber" [(ngModel)]="phonenumber" placeholder="Phone number"></div>
   <div><input type="text" name="question" [(ngModel)]="question" placeholder="Your question"></div>
-  <input class="btn" type="submit" value="Send">
+  <input (click)="sendInfo()" class="btn" type="submit" value="Send">
 </form>
+<div class="output">
+  <app-request-output [fullname]="fullname" [phonenumber]="phonenumber" [question]="question"></app-request-output>
+  <hr>
+  <h4>The list of people are sent requests from service:</h4>
+  <div *ngFor="let request of requestList ">
+    <ul>
+      <li><b>Name: </b>{{request.name}}</li>
+      <li><b>Phone number: </b>{{request.phoneNumber}}</li>
+      <li><b>Question: </b>{{request.guestion}}</li>
+    </ul>
+  </div>
+</div>
 
-<app-request-output [fullname]="fullname" [phonenumber]="phonenumber" [question]="question"></app-request-output>
 </div>

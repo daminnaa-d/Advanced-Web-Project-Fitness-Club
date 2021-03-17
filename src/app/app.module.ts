@@ -20,6 +20,7 @@ import { MartialArtsComponent } from './martial-arts/martial-arts.component';
 import { ExtraServicesComponent } from './extra-services/extra-services.component';
 import {LoggingService} from './appServices/logging.service';
 import {TrainerService} from './appServices/trainer.service';
+import {RequestService} from './appServices/request.service';
 
 
 const appRoutes: Routes = [
@@ -59,7 +60,7 @@ const appRoutes: Routes = [
         FormsModule,
         RouterModule.forRoot(appRoutes)
     ],
-  providers: [LoggingService, TrainerService],
+  providers: [LoggingService, TrainerService, RequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
