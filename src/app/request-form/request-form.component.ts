@@ -22,6 +22,12 @@ export class RequestFormComponent implements OnInit {
   getRequest(){
     return this.requestService.getRequest();
   }
+
+  // tslint:disable-next-line:typedef
+  canDeactivate() {
+    return this.requestList.length > 0;
+  }
+
   ngOnInit(): void {
   }
 

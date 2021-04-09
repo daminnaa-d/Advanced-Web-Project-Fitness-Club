@@ -19,13 +19,13 @@
     </li>
     <li><a routerLink="/trainers">Trainers</a></li>
     <li><a routerLink="/contacts">Contacts</a></li>
-  <li><a (click)="toggle()" >Leave request</a></li>
+  <li><a routerLink="/request" >Leave request</a></li>
   </ul>
 </nav>
 
-  <app-request-form *ngIf="toggle()" ></app-request-form>
-<div [ngClass]="{vision: !toggle()}" >
+<!--  <app-request-form *ngIf="toggle()" ></app-request-form>-->
+<!--<div [ngClass]="{vision: !toggle()}" >-->
 <router-outlet></router-outlet>
-</div>
+<!--</div>-->
 
 

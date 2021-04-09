@@ -21,19 +21,22 @@ import { ExtraServicesComponent } from './extra-services/extra-services.componen
 import {LoggingService} from './appServices/logging.service';
 import {TrainerService} from './appServices/trainer.service';
 import {RequestService} from './appServices/request.service';
+import {TrainerDetailGuard} from './guard/trainer-detail.guard';
+import {UnsearchedTermGuard} from './guard/unsearched-term.guard';
 
 
 const appRoutes: Routes = [
   {path: '', component: FitnessClubComponent},
   {path: 'schedule', component: ScheduleComponent},
   {path: 'services', component: ServicesComponent},
-  {path: 'trainers', component: TrainersComponent},
+  {path: 'trainers', component: TrainersComponent, canActivate: [TrainerDetailGuard]},
   {path: 'contacts', component: ContactsComponent},
   {path: 'gym', component: GymComponent},
   {path: 'group', component: GroupProgramsComponent},
   {path: 'children', component: ChildrensClubComponent},
   {path: 'martial', component: MartialArtsComponent},
   {path: 'extra', component: ExtraServicesComponent},
+  {path: 'request', component: RequestFormComponent, canDeactivate: [UnsearchedTermGuard]},
 ];
 
 @NgModule({
@@ -60,7 +63,7 @@ const appRoutes: Routes = [
         FormsModule,
         RouterModule.forRoot(appRoutes)
     ],
-  providers: [LoggingService, TrainerService, RequestService],
+  providers: [LoggingService, TrainerService, RequestService, TrainerDetailGuard, UnsearchedTermGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
