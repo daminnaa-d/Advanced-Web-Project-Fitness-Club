@@ -1,0 +1,15 @@
+{
+  "requests": [
+    { "name": "Damina",
+      "phoneNumber": "87771234567",
+      "question": "When will be yoga?" },
+
+    { "name": "Dilara",
+      "phoneNumber": "87073212233",
+      "question": "Do you have dances?" },
+
+    { "name": "Alina",
+      "phoneNumber": "87057773322",
+      "question": "I like your fitness club" }
+  ]
+}

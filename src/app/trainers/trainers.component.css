@@ -11,5 +11,13 @@
   display: inline-block;
   width: 210px;
   margin: 30px;
+}
 
+.tittle{
+  text-align: center;
+  font-size: 1.5em;
+  padding: 0 50px;
+  font-weight: bold;
+  font-family: 'Permanent Marker', cursive;
+  color: #ff6666 ;
 }

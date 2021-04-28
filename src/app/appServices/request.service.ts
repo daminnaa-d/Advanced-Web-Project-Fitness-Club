@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {LoggingService} from './logging.service';
 import {Request} from '../request-form/request';
 
 

@@ -1,22 +1,53 @@
 <div class="container">
-<form class="request">
-  <h1>Send a request!</h1>
- <div><input type="text" name="fullname" [(ngModel)]="fullname"  placeholder="Full name"></div>
-  <div><input type="text" name="phonenumber" [(ngModel)]="phonenumber" placeholder="Phone number"></div>
-  <div><input type="text" name="question" [(ngModel)]="question" placeholder="Your question"></div>
+<form class="request"  #requestForm="ngForm" (ngSubmit)="send(requestForm)">
+<h1>Send a request!</h1>
+ <div><input class="form-control" type="text" name="name"  placeholder="Full name"
+             required
+             minlength="5"
+             [(ngModel)]="request.name"
+             #nameVar="ngModel"
+             [ngClass]="{'is-invalid': (nameVar.touched || nameVar.dirty) && !nameVar.valid }" />
+   <span class="invalid-feedback">
+            <span *ngIf="nameVar.errors?.required">
+              Please enter your first name.
+            </span>
+            <span *ngIf="nameVar.errors?.minlength">
+              The full name must be longer than 5 characters.
+            </span>
+          </span>
+ </div>
+  <div><input type="text" name="phonenumber"
+              placeholder="Phone number"
+              required
+              minlength="11"
+              maxlength="11"
+              [(ngModel)]="request.phoneNumber"
+              #phoneNumberVar="ngModel"
+              [ngClass]="{'is-invalid': (phoneNumberVar.touched || phoneNumberVar.dirty) && !phoneNumberVar.valid }" />
+    <span class="invalid-feedback">
+            <span *ngIf="phoneNumberVar.errors?.required">
+              Please enter your phone number.
+            </span>
+            <span *ngIf="phoneNumberVar.errors?.minlength">
+              The phone number must be 11 characters length.
+            </span>
+          </span>
+  </div>
+  <div><input type="text" name="question"
+              placeholder="Your question"
+              required
+              [(ngModel)]="request.question"
+              #questionVar="ngModel"
+              [ngClass]="{'is-invalid': (questionVar.touched || questionVar.dirty) && !questionVar.valid }" />
+    <span class="invalid-feedback">
+            <span *ngIf="questionVar.errors?.required">
+              Please enter your question.
+            </span>
+          </span>
+  </div>
   <input (click)="sendInfo()" class="btn" type="submit" value="Send">
 </form>
 <div class="output">
-  <app-request-output [fullname]="fullname" [phonenumber]="phonenumber" [question]="question"></app-request-output>
-  <hr>
-  <h4>The list of people are sent requests from service:</h4>
-  <div *ngFor="let request of requestList ">
-    <ul>
-      <li><b>Name: </b>{{request.name}}</li>
-      <li><b>Phone number: </b>{{request.phoneNumber}}</li>
-      <li><b>Question: </b>{{request.guestion}}</li>
-    </ul>
-  </div>
+  <app-request-output [fullname]="request.name" [phonenumber]="request.phoneNumber" [question]="request.question"></app-request-output>
 </div>
-
 </div>

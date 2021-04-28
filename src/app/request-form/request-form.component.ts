@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RequestService} from '../appServices/request.service';
+import {Request} from './request';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-request-form',
@@ -7,6 +9,8 @@ import {RequestService} from '../appServices/request.service';
   styleUrls: ['./request-form.component.css']
 })
 export class RequestFormComponent implements OnInit {
+  // @ts-ignore
+  request = new Request();
   fullname = '';
   phonenumber = '';
   question = '';
@@ -27,8 +31,10 @@ export class RequestFormComponent implements OnInit {
   canDeactivate() {
     return this.requestList.length > 0;
   }
-
-  ngOnInit(): void {
+  send(requestForm: NgForm): void{
+    console.log(requestForm.form);
+    console.log('Sent requests: ' + JSON.stringify(requestForm.value));
   }
 
+  ngOnInit(): void {}
 }

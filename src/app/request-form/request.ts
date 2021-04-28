@@ -1,10 +1,10 @@
 export class Request{
-  name: string;
-  phoneNumber: string;
-  guestion: string;
-  constructor(name: string, phoneNumber: string, guestion: string) {
+  public name: string;
+  public phoneNumber: string;
+  public question: string;
+  constructor(name: string, phoneNumber: string, question: string) {
     this.name = name;
     this.phoneNumber = phoneNumber;
-    this.guestion = guestion;
+    this.question = question;
   }
 }
