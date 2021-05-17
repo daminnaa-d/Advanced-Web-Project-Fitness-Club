@@ -24,6 +24,9 @@ import {RequestService} from './appServices/request.service';
 import {TrainerDetailGuard} from './guard/trainer-detail.guard';
 import {UnsearchedTermGuard} from './guard/unsearched-term.guard';
 import {ScheduleDetailGuard} from './guard/schedule-detail.guard';
+import {HttpClientModule} from '@angular/common/http';
+import {HighlightPipe} from './customPipe/highlight.pipe';
+import {CursivePipe} from './customPipe/cursive.pipe';
 
 
 const appRoutes: Routes = [
@@ -56,12 +59,15 @@ const appRoutes: Routes = [
     GroupProgramsComponent,
     ChildrensClubComponent,
     MartialArtsComponent,
-    ExtraServicesComponent
+    ExtraServicesComponent,
+    HighlightPipe,
+    CursivePipe
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
+        HttpClientModule,
         RouterModule.forRoot(appRoutes)
     ],
   providers: [LoggingService, TrainerService, RequestService, TrainerDetailGuard, UnsearchedTermGuard],

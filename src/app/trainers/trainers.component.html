@@ -3,7 +3,7 @@
 <div *ngFor="let trainer of trainersList " class="trainer">
   <img src="{{trainer.url}}" alt="trainer" class="img">
   <h2>{{trainer.name | uppercase}}</h2>
-  <p>{{trainer.info}}</p>
+  <p><div [innerHTML]="trainer.info | cursive: trainer.info"></div>
 </div>
 </div>
 
