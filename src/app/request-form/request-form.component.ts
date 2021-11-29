@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RequestService} from '../appServices/request.service';
 import {Request} from './request';
-import {NgForm} from '@angular/forms';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-request-form',

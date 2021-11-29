@@ -1,9 +1,9 @@
 <div class="container">
   <div class="tittle"><h1>Trainers</h1></div>
 <div *ngFor="let trainer of trainersList " class="trainer">
-  <img src="{{trainer.url}}" alt="trainer" class="img">
-  <h2>{{trainer.name | uppercase}}</h2>
-  <p><div [innerHTML]="trainer.info | cursive: trainer.info"></div>
+  <img src="/assets/images/Daniel.jpg" alt="trainer" class="img">
+  <h2>{{trainer.fullName | uppercase}}</h2>
+  <p><div [innerHTML]="trainer.specialization | cursive: trainer.specialization"></div>
 </div>
 </div>
 

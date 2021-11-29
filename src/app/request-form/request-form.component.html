@@ -56,9 +56,9 @@
   <input [disabled]="!requestForm.valid" class="btn" type="submit" value="Send request">
   <div *ngIf="msgTrue">Request is sent successfully!</div>
 </form>
-<!--<div class="output">-->
-<!--  <app-request-output [fullname]="request.name" [phonenumber]="request.phoneNumber" [question]="request.question"></app-request-output>-->
-<!--</div>-->
+<div class="output">
+  <app-request-output [fullname]="request.name" [phonenumber]="request.phoneNumber" [question]="request.question"></app-request-output>
+</div>
 </div>
 <div class="requests">
   <input (click)="showRequests()" class="btn" type="submit" value="Show other Requests">
