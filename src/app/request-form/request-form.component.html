@@ -1,4 +1,5 @@
 <div class="container">
+
 <form class="request"  #requestForm="ngForm" (ngSubmit)="addNewRequest(requestForm)">
 <h1>Send a request!</h1>
   <div><input class="form-control" type="text" name="id"  placeholder="Id" required
@@ -12,7 +13,7 @@
  <div><input class="form-control" type="text" name="name"  placeholder="Full name"
              required
              minlength="5"
-             [(ngModel)]="request.name"
+             [(ngModel)]="request.amount"
              #nameVar="ngModel"
              [ngClass]="{'is-invalid': (nameVar.touched || nameVar.dirty) && !nameVar.valid }" />
           <span>
@@ -24,48 +25,14 @@
             </span>
           </span>
  </div>
-  <div><input type="text" name="phonenumber"
-              placeholder="Phone number"
-              required
-              minlength="11"
-              maxlength="11"
-              [(ngModel)]="request.phoneNumber"
-              #phoneNumberVar="ngModel"
-              [ngClass]="{'is-invalid': (phoneNumberVar.touched || phoneNumberVar.dirty) && !phoneNumberVar.valid }" />
-          <span>
-            <span *ngIf="phoneNumberVar.errors?.required">
-              Please enter your phone number.
-            </span>
-            <span *ngIf="phoneNumberVar.errors?.minlength">
-              The phone number must be 11 characters length.
-            </span>
-          </span>
-  </div>
-  <div><input type="text" name="question"
-              placeholder="Your question"
-              required
-              [(ngModel)]="request.question"
-              #questionVar="ngModel"
-              [ngClass]="{'is-invalid': (questionVar.touched || questionVar.dirty) && !questionVar.valid }" />
-          <span>
-            <span *ngIf="questionVar.errors?.required">
-              Please enter your question.
-            </span>
-          </span>
+  <div>
+    <select name="cars" id="cars"
+            [(ngModel)]="request.subscriptionType">
+      <option value="volvo">Volvo</option>
+    </select>
   </div>
   <input [disabled]="!requestForm.valid" class="btn" type="submit" value="Send request">
   <div *ngIf="msgTrue">Request is sent successfully!</div>
 </form>
-<div class="output">
-  <app-request-output [fullname]="request.name" [phonenumber]="request.phoneNumber" [question]="request.question"></app-request-output>
-</div>
-</div>
-<div class="requests">
-  <input (click)="showRequests()" class="btn" type="submit" value="Show other Requests">
-<div *ngFor="let request of requests">
-  <ul>
-    <li><div [innerHTML]="request.name | highlight: request.name"></div></li>
-    <li>{{ request.question}}</li>
-  </ul>
-</div>
+
 </div>

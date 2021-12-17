@@ -1,10 +1,14 @@
 export class Request{
-  public name: string;
-  public phoneNumber: string;
-  public question: string;
-  constructor(name: string, phoneNumber: string, question: string) {
-    this.name = name;
-    this.phoneNumber = phoneNumber;
-    this.question = question;
+  public id: number;
+  public amount: number;
+  public userId: number;
+  public valid: string;
+  public subscriptionType: string;
+  constructor(id: number, amount: number, userId: number, valid: string, subscriptionType: string) {
+    this.id = id;
+    this.amount = amount;
+    this.userId = userId;
+    this.valid = valid;
+    this.subscriptionType = subscriptionType;
   }
 }

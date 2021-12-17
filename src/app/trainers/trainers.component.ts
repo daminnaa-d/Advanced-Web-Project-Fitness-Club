@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Trainer} from './trainer';
 import {TrainerService} from '../appServices/trainer.service';
-import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-trainers',

@@ -27,6 +27,7 @@ import {ScheduleDetailGuard} from './guard/schedule-detail.guard';
 import {HttpClientModule} from '@angular/common/http';
 import {HighlightPipe} from './customPipe/highlight.pipe';
 import {CursivePipe} from './customPipe/cursive.pipe';
+import {ScheduleService} from './appServices/schedule.service';
 
 
 const appRoutes: Routes = [
@@ -70,7 +71,7 @@ const appRoutes: Routes = [
         HttpClientModule,
         RouterModule.forRoot(appRoutes)
     ],
-  providers: [LoggingService, TrainerService, RequestService, TrainerDetailGuard, UnsearchedTermGuard],
+  providers: [LoggingService, TrainerService, RequestService, ScheduleService, TrainerDetailGuard, UnsearchedTermGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

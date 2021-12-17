@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RequestService} from '../appServices/request.service';
 import {Request} from './request';
 import {HttpClient} from '@angular/common/http';
+import {Trainer} from '../trainers/trainer';
 
 @Component({
   selector: 'app-request-form',
@@ -18,10 +19,8 @@ export class RequestFormComponent implements OnInit {
   requests: any;
   msgTrue = false;
   constructor(public requestService: RequestService, private http: HttpClient) { }
-
   // tslint:disable-next-line:typedef
   sendInfo(){
-    this.requestService.addRequest(this.fullname, this.phonenumber, this.question);
     this.getRequest();
   }
   // tslint:disable-next-line:typedef
@@ -54,5 +53,18 @@ export class RequestFormComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+  }
+  getSubscriptionType(){
+    this.http.get('http://localhost:8085/subs', {headers: {'Access-Control-Allow-Origin': '*'}})
+      .subscribe((response) => {
+        console.log(response);
+        this.response = response;
+        console.log(this.response[0].specialization);
+        for (const trainer of this.response){
+          this.trainerList.push(new Trainer(trainer.id, trainer.fullName, trainer.phoneNumber, trainer.specialization));
+        }
+        console.log(this.trainerList);
+      });
+    return this.trainerList;
   }
 }

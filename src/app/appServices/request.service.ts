@@ -12,8 +12,8 @@ export class RequestService {
   getRequest() {
     return this.requestList;
   }
-  // tslint:disable-next-line:typedef
-  addRequest(name: string, phoneNumber: string, question: string ){
-    this.requestList.push(new Request(name, phoneNumber, question));
-  }
+  // // tslint:disable-next-line:typedef
+  // addRequest(name: string, phoneNumber: string, question: string ){
+  //   this.requestList.push(new Request(name, phoneNumber, question));
+  // }
 }
