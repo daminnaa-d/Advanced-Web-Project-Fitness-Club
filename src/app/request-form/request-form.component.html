@@ -1,16 +1,16 @@
 <div class="container">
 
-<form class="request"  #requestForm="ngForm" (ngSubmit)="addNewRequest(requestForm)">
+<form class="request"  #requestForm="ngForm" (ngSubmit)="sendRequest(request)">
 <h1>Send a request!</h1>
-  <div><input class="form-control" type="text" name="id"  placeholder="Id" required
-              ngModel
+  <div><input class="form-control" type="text" name="userId"  placeholder="Id" required
+              [(ngModel)]="request.userId"
               #idVar="ngModel"
     [ngClass]="{'is-invalid': (idVar.touched || idVar.dirty) && !idVar.valid }"/>
     <span *ngIf="idVar.errors?.required">
               Please enter id.
             </span>
   </div>
- <div><input class="form-control" type="text" name="name"  placeholder="Full name"
+ <div><input class="form-control" type="text" name="amount"  placeholder="Full name"
              required
              minlength="5"
              [(ngModel)]="request.amount"
@@ -26,13 +26,11 @@
           </span>
  </div>
   <div>
-    <select name="cars" id="cars"
-            [(ngModel)]="request.subscriptionType">
-      <option value="volvo">Volvo</option>
+    <select class="form-control" name="subscriptionType" [(ngModel)]="request.subscriptionType">
+      <option *ngFor="let subType of subTypes" value="{{subType.name}}">{{subType.name}}</option>
     </select>
   </div>
   <input [disabled]="!requestForm.valid" class="btn" type="submit" value="Send request">
-  <div *ngIf="msgTrue">Request is sent successfully!</div>
 </form>
 
 </div>

@@ -22,7 +22,6 @@ import {LoggingService} from './appServices/logging.service';
 import {TrainerService} from './appServices/trainer.service';
 import {RequestService} from './appServices/request.service';
 import {TrainerDetailGuard} from './guard/trainer-detail.guard';
-import {UnsearchedTermGuard} from './guard/unsearched-term.guard';
 import {ScheduleDetailGuard} from './guard/schedule-detail.guard';
 import {HttpClientModule} from '@angular/common/http';
 import {HighlightPipe} from './customPipe/highlight.pipe';
@@ -41,7 +40,7 @@ const appRoutes: Routes = [
   {path: 'children', component: ChildrensClubComponent},
   {path: 'martial', component: MartialArtsComponent},
   {path: 'extra', component: ExtraServicesComponent},
-  {path: 'request', component: RequestFormComponent, canDeactivate: [UnsearchedTermGuard]},
+  {path: 'request', component: RequestFormComponent},
 ];
 
 @NgModule({
@@ -71,7 +70,7 @@ const appRoutes: Routes = [
         HttpClientModule,
         RouterModule.forRoot(appRoutes)
     ],
-  providers: [LoggingService, TrainerService, RequestService, ScheduleService, TrainerDetailGuard, UnsearchedTermGuard],
+  providers: [LoggingService, TrainerService, RequestService, ScheduleService, TrainerDetailGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
