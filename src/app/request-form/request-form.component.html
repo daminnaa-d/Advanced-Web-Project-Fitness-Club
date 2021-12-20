@@ -5,29 +5,30 @@
   <div><input class="form-control" type="text" name="userId"  placeholder="Id" required
               [(ngModel)]="request.userId"
               #idVar="ngModel"
-    [ngClass]="{'is-invalid': (idVar.touched || idVar.dirty) && !idVar.valid }"/>
+              [ngClass]="{'is-invalid': (idVar.touched || idVar.dirty) && !idVar.valid }"/>
     <span *ngIf="idVar.errors?.required">
-              Please enter id.
-            </span>
+      Please enter your id!
+    </span>
   </div>
- <div><input class="form-control" type="text" name="amount"  placeholder="Full name"
+ <div><input class="form-control" type="text" name="amount"  placeholder="Amount of money"
              required
              minlength="5"
              [(ngModel)]="request.amount"
              #nameVar="ngModel"
              [ngClass]="{'is-invalid': (nameVar.touched || nameVar.dirty) && !nameVar.valid }" />
-          <span>
-            <span *ngIf="nameVar.errors?.required">
-              Please enter your first name.
-            </span>
-            <span *ngIf="nameVar.errors?.minlength">
-              The full name must be longer than 5 characters.
-            </span>
-          </span>
+   <span *ngIf="nameVar.errors?.required">
+     Please enter amount of money!
+   </span>
  </div>
   <div>
-    <select class="form-control" name="subscriptionType" [(ngModel)]="request.subscriptionType">
+    <select class="form-control" name="subscriptionType" placeholder="Choose subscription!"
+            [(ngModel)]="request.subscriptionType"
+            #idVar="ngModel"
+            [ngClass]="{'is-invalid': (idVar.touched || idVar.dirty) && !idVar.valid }">
       <option *ngFor="let subType of subTypes" value="{{subType.name}}">{{subType.name}}</option>
+      <span *ngIf="nameVar.errors?.required">
+        Please choose subscription type!
+      </span>
     </select>
   </div>
   <input [disabled]="!requestForm.valid" class="btn" type="submit" value="Send request">

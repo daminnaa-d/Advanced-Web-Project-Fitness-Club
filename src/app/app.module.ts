@@ -27,6 +27,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {HighlightPipe} from './customPipe/highlight.pipe';
 import {CursivePipe} from './customPipe/cursive.pipe';
 import {ScheduleService} from './appServices/schedule.service';
+import { PaymentComponent } from './payment/payment.component';
 
 
 const appRoutes: Routes = [
@@ -61,7 +62,8 @@ const appRoutes: Routes = [
     MartialArtsComponent,
     ExtraServicesComponent,
     HighlightPipe,
-    CursivePipe
+    CursivePipe,
+    PaymentComponent
   ],
     imports: [
         BrowserModule,
